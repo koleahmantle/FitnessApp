@@ -32,7 +32,7 @@ namespace FitnessApp.WebAPI.Models
         {
             return new ApplicationDbContext();
         }
-        public DbSet<Note> Notes { get; set; }
+       // public DbSet<Note> Notes { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
