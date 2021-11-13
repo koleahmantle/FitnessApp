@@ -3,11 +3,12 @@ using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Fitnessapp.Data.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 
-namespace FitnessApp.WebAPI.Models
+namespace Fitnessapp.Data
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -32,7 +33,7 @@ namespace FitnessApp.WebAPI.Models
         {
             return new ApplicationDbContext();
         }
-       // public DbSet<Note> Notes { get; set; }
+       public DbSet<Workout> Workouts { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
