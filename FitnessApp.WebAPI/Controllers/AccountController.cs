@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using FitnessApp.WebAPI.Models;
 using FitnessApp.WebAPI.Providers;
 using FitnessApp.WebAPI.Results;
+using Fitnessapp.Data;
 
 namespace FitnessApp.WebAPI.Controllers
 {
