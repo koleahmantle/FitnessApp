@@ -73,5 +73,21 @@ namespace FitnessApp.Services
                 };
             }
         }
+        public bool UpdateWorkout(WorkoutEdit model)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var entity = context
+                    .Workouts
+                    .Single(e => e.WorkoutId == model.WorkoutId && e.OwnerId == _userId);
+
+                entity.Name = model.Name;
+                entity.Category = model.Category;
+                entity.Duration = model.Duration;
+                entity.Intensity = model.Intensity;
+
+                return context.SaveChanges() == 1;
+            }
+        }
     }
 }

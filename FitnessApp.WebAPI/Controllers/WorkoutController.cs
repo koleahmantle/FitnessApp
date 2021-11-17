@@ -44,6 +44,18 @@ namespace FitnessApp.WebAPI.Controllers
             var workoutService = new WorkoutService(userId);
             return workoutService;
         }
+        public IHttpActionResult Put(WorkoutEdit workout)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateWorkoutService();
+
+            if (!service.UpdateWorkout(workout))
+                return InternalServerError();
+
+            return Ok();
+        }
 
     }
 }
