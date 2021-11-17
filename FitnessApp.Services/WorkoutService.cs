@@ -89,5 +89,18 @@ namespace FitnessApp.Services
                 return context.SaveChanges() == 1;
             }
         }
+        public bool DeleteWorkout(int workoutId)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var entity = context
+                        .Workouts
+                        .Single(e => e.WorkoutId == workoutId && e.OwnerId == _userId);
+
+                context.Workouts.Remove(entity);
+
+                return context.SaveChanges() == 1;
+            }
+        }
     }
 }

@@ -56,6 +56,13 @@ namespace FitnessApp.WebAPI.Controllers
 
             return Ok();
         }
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateWorkoutService();
+            if (!service.DeleteWorkout(id))
+                return InternalServerError();
 
+            return Ok();
+        }
     }
 }
