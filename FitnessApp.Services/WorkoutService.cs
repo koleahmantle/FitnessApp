@@ -56,5 +56,22 @@ namespace FitnessApp.Services
                 return query.ToArray();
             }
         }
+        public WorkoutDetail GetWorkoutById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Workouts
+                    .Single(e => e.WorkoutId == id && e.OwnerId == _userId);
+                return new WorkoutDetail
+                {
+                    WorkoutId = entity.WorkoutId,
+                    Name = entity.Name,
+                    Category = entity.Category,
+                    Duration = entity.Duration,
+                    Intensity = entity.Intensity,
+                };
+            }
+        }
     }
 }
