@@ -21,5 +21,12 @@ namespace Fitnessapp.Data.Models
         public double Duration { get; set; }
         [Required]
         public string Intensity { get; set; }
+
+        public virtual ICollection<UserTracker> ListOfTrackers { get; set; }
+        public Workout()
+        {
+            ListOfTrackers = new List<UserTracker>();
+        }
+
     }
 }
