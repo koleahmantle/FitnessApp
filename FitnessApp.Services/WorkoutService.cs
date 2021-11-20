@@ -35,6 +35,7 @@ namespace FitnessApp.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
         public IEnumerable<WorkoutListItem> GetWorkouts()
         {
             using (var ctx = new ApplicationDbContext())
@@ -56,6 +57,7 @@ namespace FitnessApp.Services
                 return query.ToArray();
             }
         }
+
         public WorkoutDetail GetWorkoutById(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -73,6 +75,7 @@ namespace FitnessApp.Services
                 };
             }
         }
+
         public bool UpdateWorkout(WorkoutEdit model)
         {
             using (var context = new ApplicationDbContext())
