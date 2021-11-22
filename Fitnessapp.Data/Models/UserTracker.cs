@@ -14,9 +14,9 @@ namespace Fitnessapp.Data.Models
         [Key]
         public int UserTrackerId { get; set; }
 
-        [ForeignKey(nameof(ApplicationUser))]
+        //[ForeignKey(nameof(ApplicationUser))]
         public Guid UserId { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        //public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Display(Name = "Completed Workouts")]
         public virtual ICollection<Workout> ListOfCompletedWorkouts { get; set; }

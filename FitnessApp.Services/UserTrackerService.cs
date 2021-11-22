@@ -51,6 +51,21 @@ namespace FitnessApp.Services
             }
         }
 
+        public UserTrackerDetail GetUserTrackerById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .UserTrackers
+                    .Single(e => e.UserTrackerId == id && e.UserId == _userId);
+                return new UserTrackerDetail
+                {
+                    UserTrackerId = entity.UserTrackerId,
+                    UserId = entity.UserId
+                };
+            }
+        }
+
 
 
 
