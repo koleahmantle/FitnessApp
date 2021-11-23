@@ -29,7 +29,7 @@ namespace FitnessApp.Services
                 Duration = model.Duration,
                 Intensity = model.Intensity,
             };
-            using (var ctx = new ApplicationDbContext())
+            using (var ctx = new Application.DbContext())
             {
                 ctx.Workouts.Add(entity);
                 return ctx.SaveChanges() == 1;
