@@ -46,5 +46,26 @@ namespace FitnessApp.WebAPI.Controllers
             var userTracker = userTrackerService.GetUserTrackerById(id);
             return Ok(userTracker);
         }
+
+        public IHttpActionResult Put (UserTrackerEdit userTracker)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateUserTrackerService();
+
+            if (!service.UpdateUserTracker(userTracker))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateUserTrackerService();
+            if (!service.DeleteUserTracker(id))
+                return InternalServerError();
+            return Ok();
+        }
     }
 }

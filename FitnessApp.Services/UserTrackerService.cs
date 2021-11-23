@@ -22,8 +22,9 @@ namespace FitnessApp.Services
         {
             var entity = new UserTracker()
             {
-                UserTrackerId = model.UserTrackerId,
-                UserId = model.UserId,
+                UserId = _userId,
+                UserName = model.UserName,
+                TagLine = model.TagLine
 
             };
             using (var ctx = new ApplicationDbContext())
@@ -44,8 +45,8 @@ namespace FitnessApp.Services
                     new UserTrackerListItem
                     {
                         UserTrackerId = e.UserTrackerId,
-                        UserId = e.UserId,
-                        ListOfCompletedWorkouts = e.ListOfCompletedWorkouts
+                        UserName = e.UserName,
+                        TagLine = e.TagLine
                     });
                 return query.ToArray();
             }
@@ -57,17 +58,44 @@ namespace FitnessApp.Services
             {
                 var entity = ctx
                     .UserTrackers
-                    .Single(e => e.UserTrackerId == id && e.UserId == _userId);
+                    .SingleOrDefault(e => e.UserTrackerId == id && e.UserId == _userId);
                 return new UserTrackerDetail
                 {
                     UserTrackerId = entity.UserTrackerId,
-                    UserId = entity.UserId
+                    UserName = entity.UserName,
+                    TagLine = entity.TagLine
                 };
             }
         }
 
+        public bool UpdateUserTracker(UserTrackerEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .UserTrackers
+                    .Single(e => e.UserTrackerId == model.UserTrackerId && e.UserId == _userId);
 
+                
+                entity.UserName = model.UserName;
+                entity.TagLine = model.TagLine;
 
+                return ctx.SaveChanges() == 1;
+            }
+        }
 
+        public bool DeleteUserTracker(int usetTrackerId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .UserTrackers
+                    .Single(e => e.UserTrackerId == usetTrackerId && e.UserId == _userId);
+
+                ctx.UserTrackers.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

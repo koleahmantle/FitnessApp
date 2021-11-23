@@ -12,11 +12,14 @@ namespace FitnessApp.Models
     {
         public int UserTrackerId { get; set; }
 
-        public Guid UserId { get; set; }
+        public string UserName { get; set; }
 
-        [Display(Name = "Completed Workouts")]
-        public virtual ICollection<Workout> ListOfCompletedWorkouts { get; set; }
+        public string TagLine { get; set; }
 
+        //[Display(Name = "Completed Workouts")]
+        //public virtual ICollection<Workout> ListOfCompletedWorkouts { get; set; }
+
+        //[Display(Name = "MealsEaten")]
         //public virtual ICollection<Recipe> ListOfMealsEaten { get; set; }
     }
 }

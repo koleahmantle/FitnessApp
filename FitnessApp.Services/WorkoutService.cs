@@ -58,7 +58,7 @@ namespace FitnessApp.Services
             }
         }
 
-        public WorkoutDetail GetWorkoutById(int id)
+        public WorkoutDetail GetWorkoutById (int id)
         {
             using (var ctx = new ApplicationDbContext())
             {

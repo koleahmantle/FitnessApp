@@ -19,15 +19,16 @@ namespace FitnessApp.WebAPI.Controllers
             var workouts = workoutService.GetWorkouts();
             return Ok(workouts);
         }
+
         public IHttpActionResult Get(int id)
         {
             WorkoutService workoutService = CreateWorkoutService();
             var workout = workoutService.GetWorkoutById(id);
             return Ok(workout);
         }
+
         public IHttpActionResult Post(WorkoutCreate workout)
         {
-
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
@@ -38,12 +39,14 @@ namespace FitnessApp.WebAPI.Controllers
 
             return Ok();
         }
+
         private WorkoutService CreateWorkoutService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var workoutService = new WorkoutService(userId);
             return workoutService;
         }
+
         public IHttpActionResult Put(WorkoutEdit workout)
         {
             if (!ModelState.IsValid)
@@ -56,6 +59,7 @@ namespace FitnessApp.WebAPI.Controllers
 
             return Ok();
         }
+
         public IHttpActionResult Delete(int id)
         {
             var service = CreateWorkoutService();

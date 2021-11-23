@@ -18,12 +18,16 @@ namespace Fitnessapp.Data.Models
         public Guid UserId { get; set; }
         //public virtual ApplicationUser ApplicationUser { get; set; }
 
-        [Display(Name = "Completed Workouts")]
-        public virtual ICollection<Workout> ListOfCompletedWorkouts { get; set; }
-        public UserTracker()
-        {
-            ListOfCompletedWorkouts = new List<Workout>();
-        }
+        public string UserName { get; set; }
+
+        public string TagLine { get; set; }
+
+        //[Display(Name = "Completed Workouts")]
+        //public virtual ICollection<Workout> ListOfCompletedWorkouts { get; set; }
+        //public UserTracker()
+        //{
+        //    ListOfCompletedWorkouts = new List<Workout>();
+        //}
 
         //[Display(Name = "Meals Eaten")]
         //public virtual ICollection<Recipe> ListOfMealsEaten { get; set; }

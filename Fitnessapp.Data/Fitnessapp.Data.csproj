@@ -88,6 +88,14 @@
     <Compile Include="Migrations\202111221537522_UserTracker.Designer.cs">
       <DependentUpon>202111221537522_UserTracker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111232237255_UserTracker1.cs" />
+    <Compile Include="Migrations\202111232237255_UserTracker1.Designer.cs">
+      <DependentUpon>202111232237255_UserTracker1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111232335549_UserTracker2.cs" />
+    <Compile Include="Migrations\202111232335549_UserTracker2.Designer.cs">
+      <DependentUpon>202111232335549_UserTracker2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -103,6 +111,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202111221537522_UserTracker.resx">
       <DependentUpon>202111221537522_UserTracker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111232237255_UserTracker1.resx">
+      <DependentUpon>202111232237255_UserTracker1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111232335549_UserTracker2.resx">
+      <DependentUpon>202111232335549_UserTracker2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

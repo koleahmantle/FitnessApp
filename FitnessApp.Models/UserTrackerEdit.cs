@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace FitnessApp.Models
 {
-    public class UserTrackerCreate
+    public class UserTrackerEdit
     {
+        public int UserTrackerId { get; set; }
+
         public string UserName { get; set; }
 
         public string TagLine { get; set; }
