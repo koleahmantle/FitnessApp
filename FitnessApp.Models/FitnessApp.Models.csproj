@@ -55,6 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserTrackerCreate.cs" />
+    <Compile Include="UserTrackerDetail.cs" />
+    <Compile Include="UserTrackerEdit.cs" />
+    <Compile Include="UserTrackerListItem.cs" />
     <Compile Include="WorkoutCreate.cs" />
     <Compile Include="WorkoutDetail.cs" />
     <Compile Include="WorkoutEdit.cs" />
@@ -63,6 +67,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fitnessapp.Data\Fitnessapp.Data.csproj">
+      <Project>{CBF9987A-7119-4137-A863-2DF332C419A8}</Project>
+      <Name>Fitnessapp.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

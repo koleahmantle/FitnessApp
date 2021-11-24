@@ -35,6 +35,7 @@ namespace FitnessApp.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
         public IEnumerable<WorkoutListItem> GetWorkouts()
         {
             using (var ctx = new ApplicationDbContext())
@@ -56,7 +57,23 @@ namespace FitnessApp.Services
                 return query.ToArray();
             }
         }
-        public WorkoutDetail GetWorkoutById(int id)
+
+        public IEnumerable<WorkoutListItem> GetAllWorkoutsByTrackerId(int userTrackerId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var foundWorkouts =
+                    ctx.UserTrackers.Single(t => t.UserTrackerId == userTrackerId).ListOfCompletedWorkouts
+                    .Select(e => new WorkoutListItem
+                    {
+                        WorkoutId = e.WorkoutId,
+                        Name = e.Name,
+                    });
+                return foundWorkouts.ToArray();
+            }
+        }
+
+        public WorkoutDetail GetWorkoutById (int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -73,6 +90,7 @@ namespace FitnessApp.Services
                 };
             }
         }
+
         public bool UpdateWorkout(WorkoutEdit model)
         {
             using (var context = new ApplicationDbContext())
