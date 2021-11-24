@@ -22,12 +22,12 @@ namespace Fitnessapp.Data.Models
 
         public string TagLine { get; set; }
 
-        //[Display(Name = "Completed Workouts")]
-        //public virtual ICollection<Workout> ListOfCompletedWorkouts { get; set; }
-        //public UserTracker()
-        //{
-        //    ListOfCompletedWorkouts = new List<Workout>();
-        //}
+        [Display(Name = "Completed Workouts")]
+        public virtual ICollection<Workout> ListOfCompletedWorkouts { get; set; }
+        public UserTracker()
+        {
+            ListOfCompletedWorkouts = new List<Workout>();
+        }
 
         //[Display(Name = "Meals Eaten")]
         //public virtual ICollection<Recipe> ListOfMealsEaten { get; set; }

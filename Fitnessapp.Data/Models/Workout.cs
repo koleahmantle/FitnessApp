@@ -22,11 +22,11 @@ namespace Fitnessapp.Data.Models
         [Required]
         public string Intensity { get; set; }
 
-        //public virtual ICollection<UserTracker> ListOfTrackers { get; set; }
-        //public Workout()
-       // {
-        //    ListOfTrackers = new List<UserTracker>();
-//}
+        public virtual ICollection<UserTracker> ListOfTrackers { get; set; }
+        public Workout()
+        {
+            ListOfTrackers = new List<UserTracker>();
+        }
 
     }
 }

@@ -34,6 +34,17 @@ namespace FitnessApp.Services
             }
         }
 
+        public void AddWorkOutToTracker(int workoutId, int userTrackerId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var foundWorkout = ctx.Workouts.Single(w => w.WorkoutId == workoutId);
+                var foundUserTracker = ctx.UserTrackers.Single(t => t.UserTrackerId == userTrackerId);
+                foundUserTracker.ListOfCompletedWorkouts.Add(foundWorkout);
+                var testing = ctx.SaveChanges();
+            }
+        }
+
         public IEnumerable<UserTrackerListItem> GetAllUserTrackers()
         {
             using (var ctx = new ApplicationDbContext())

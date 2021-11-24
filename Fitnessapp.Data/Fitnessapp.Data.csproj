@@ -96,6 +96,10 @@
     <Compile Include="Migrations\202111232335549_UserTracker2.Designer.cs">
       <DependentUpon>202111232335549_UserTracker2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111240103402_AddWorkoutToTracker.cs" />
+    <Compile Include="Migrations\202111240103402_AddWorkoutToTracker.Designer.cs">
+      <DependentUpon>202111240103402_AddWorkoutToTracker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -117,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111232335549_UserTracker2.resx">
       <DependentUpon>202111232335549_UserTracker2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111240103402_AddWorkoutToTracker.resx">
+      <DependentUpon>202111240103402_AddWorkoutToTracker.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

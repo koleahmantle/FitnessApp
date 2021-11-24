@@ -33,6 +33,22 @@ namespace FitnessApp.WebAPI.Controllers
             return Ok();
         }
 
+        public IHttpActionResult Post(int userTrackerId, int workoutId)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateUserTrackerService();
+
+            if (service != null)
+            {
+                service.AddWorkOutToTracker(workoutId, userTrackerId);
+            }
+            //return InternalServerError();
+
+            return Ok();
+        }
+
         public IHttpActionResult Get()
         {
             UserTrackerService userTrackerService = CreateUserTrackerService();

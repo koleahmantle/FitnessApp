@@ -20,11 +20,21 @@ namespace FitnessApp.WebAPI.Controllers
             return Ok(workouts);
         }
 
+        
         public IHttpActionResult Get(int id)
         {
             WorkoutService workoutService = CreateWorkoutService();
             var workout = workoutService.GetWorkoutById(id);
             return Ok(workout);
+        }
+
+        
+        //Get workouts by tracker id
+        public IHttpActionResult GetWOsByTId(int trackerId)
+        {
+            WorkoutService workoutService = CreateWorkoutService();
+            var workouts = workoutService.GetAllWorkoutsByTrackerId(trackerId);
+            return Ok(workouts);
         }
 
         public IHttpActionResult Post(WorkoutCreate workout)
