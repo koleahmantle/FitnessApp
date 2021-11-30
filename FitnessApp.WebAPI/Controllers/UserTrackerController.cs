@@ -20,6 +20,7 @@ namespace FitnessApp.WebAPI.Controllers
             return userTrackerService;
         }
 
+        //add tracker
         public IHttpActionResult Post(UserTrackerCreate userTracker)
         {
             if (!ModelState.IsValid)
@@ -33,6 +34,7 @@ namespace FitnessApp.WebAPI.Controllers
             return Ok();
         }
 
+        //add Workout To Tracker
         public IHttpActionResult Post(int userTrackerId, int workoutId)
         {
             if (!ModelState.IsValid)
@@ -44,7 +46,6 @@ namespace FitnessApp.WebAPI.Controllers
             {
                 service.AddWorkOutToTracker(workoutId, userTrackerId);
             }
-            //return InternalServerError();
 
             return Ok();
         }

@@ -22,6 +22,15 @@ namespace Fitnessapp.Data.Models
 
         public string TagLine { get; set; }
 
+        public int TotalCaloriesBurned 
+        {
+            get
+            {
+                int sum = ListOfCompletedWorkouts.Select(x => x.CaloriesBurned).Sum();
+                return sum;
+            }
+        }
+
         [Display(Name = "Completed Workouts")]
         public virtual ICollection<Workout> ListOfCompletedWorkouts { get; set; }
         public UserTracker()
