@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FitnessApp.Models
 {
-    class RecipeListItem
+   public  class RecipeListItem
     {
         public int RecipeId { get; set; }
         public string RecipeName { get; set; }
