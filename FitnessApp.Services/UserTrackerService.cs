@@ -74,7 +74,7 @@ namespace FitnessApp.Services
                 {
                     UserTrackerId = entity.UserTrackerId,
                     UserName = entity.UserName,
-                    TagLine = entity.TagLine
+                    TagLine = entity.TagLine,
                 };
             }
         }
@@ -87,7 +87,7 @@ namespace FitnessApp.Services
                     .UserTrackers
                     .Single(e => e.UserTrackerId == model.UserTrackerId && e.UserId == _userId);
 
-                
+
                 entity.UserName = model.UserName;
                 entity.TagLine = model.TagLine;
 

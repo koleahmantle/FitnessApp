@@ -28,6 +28,7 @@ namespace FitnessApp.Services
                 Category = model.Category,
                 Duration = model.Duration,
                 Intensity = model.Intensity,
+                CaloriesBurned = model.CaloriesBurned
             };
             using (var ctx = new ApplicationDbContext())
             {
@@ -50,11 +51,31 @@ namespace FitnessApp.Services
                         Name = e.Name,
                         Category = e.Category,
                         Duration = e.Duration,
-                        Intensity = e.Intensity
+                        Intensity = e.Intensity,
+                        CaloriesBurned = e.CaloriesBurned
 
                     }
                     );
                 return query.ToArray();
+            }
+        }
+
+        public WorkoutDetail GetWorkoutById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Workouts
+                    .Single(e => e.WorkoutId == id && e.OwnerId == _userId);
+                return new WorkoutDetail
+                {
+                    WorkoutId = entity.WorkoutId,
+                    Name = entity.Name,
+                    Category = entity.Category,
+                    Duration = entity.Duration,
+                    Intensity = entity.Intensity,
+                    CaloriesBurned = entity.CaloriesBurned
+                };
             }
         }
 
@@ -73,21 +94,14 @@ namespace FitnessApp.Services
             }
         }
 
-        public WorkoutDetail GetWorkoutById (int id)
+        public int GetCaloriesBurnedByTrackerId(int userTrackerId)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx
-                    .Workouts
-                    .Single(e => e.WorkoutId == id && e.OwnerId == _userId);
-                return new WorkoutDetail
-                {
-                    WorkoutId = entity.WorkoutId,
-                    Name = entity.Name,
-                    Category = entity.Category,
-                    Duration = entity.Duration,
-                    Intensity = entity.Intensity,
-                };
+                var sum = ctx.UserTrackers.Single(t => t.UserTrackerId == userTrackerId).ListOfCompletedWorkouts
+                    .Select(t => t.CaloriesBurned)
+                    .Sum();
+                return sum;
             }
         }
 
@@ -103,6 +117,7 @@ namespace FitnessApp.Services
                 entity.Category = model.Category;
                 entity.Duration = model.Duration;
                 entity.Intensity = model.Intensity;
+                entity.CaloriesBurned = model.CaloriesBurned;
 
                 return context.SaveChanges() == 1;
             }

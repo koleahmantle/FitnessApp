@@ -13,5 +13,6 @@ namespace FitnessApp.Models
         public string Category { get; set; }
         public double Duration { get; set; }
         public string Intensity { get; set; }
+        public int CaloriesBurned { get; set; }
     }
 }
