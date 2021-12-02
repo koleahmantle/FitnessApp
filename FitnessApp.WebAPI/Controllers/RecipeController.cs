@@ -11,7 +11,7 @@ using System.Web.Http;
 namespace FitnessApp.WebAPI.Controllers
 {
     [Authorize]
-    public class ReciperController : ApiController
+    public class RecipeController : ApiController
     {
 
         public IHttpActionResult Get()

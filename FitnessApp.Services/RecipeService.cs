@@ -32,7 +32,7 @@ namespace FitnessApp.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Recipe.Add(entity);
+                ctx.Recipes.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -43,7 +43,7 @@ namespace FitnessApp.Services
             {
                 var query =
                     ctx
-                        .Recipe
+                        .Recipes
                         .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
@@ -52,12 +52,14 @@ namespace FitnessApp.Services
                                     RecipeId = e.RecipeId,
                                     RecipeName = e.RecipeName,
                                     Diet = e.Diet,
-                                    MealType = e.Mealtype,
+                                    MealType = e.MealType,
                                     Calories = e.Calories
                                 }
                          );
                 return query.ToArray();
             }
         }
+
+
     }
 }
