@@ -35,11 +35,8 @@ namespace Fitnessapp.Data
         {
             return new ApplicationDbContext();
         }
-       public DbSet<Workout> Workouts { get; set; }
-       public DbSet<Recipe> Recipes { get; set; }
-
-
         public DbSet<Workout> Workouts { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
 
         public DbSet<UserTracker> UserTrackers { get; set; }
 
