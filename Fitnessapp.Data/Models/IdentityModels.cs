@@ -8,6 +8,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 
+
+
 namespace Fitnessapp.Data
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
@@ -33,6 +35,9 @@ namespace Fitnessapp.Data
         {
             return new ApplicationDbContext();
         }
+       public DbSet<Workout> Workouts { get; set; }
+       public DbSet<Recipe> Recipes { get; set; }
+
 
         public DbSet<Workout> Workouts { get; set; }
 
