@@ -13,36 +13,27 @@ namespace Fitnessapp.Data.Models
     {
         [Key]
         public int UserTrackerId { get; set; }
-
-        //[ForeignKey(nameof(ApplicationUser))]
+        [Required]
         public Guid UserId { get; set; }
-        //public virtual ApplicationUser ApplicationUser { get; set; }
-
+        [Required]
         public string UserName { get; set; }
-
+        [Required]
         public string TagLine { get; set; }
-
-        public int TotalCaloriesBurned 
-        {
-            get
-            {
-                int sum = ListOfCompletedWorkouts.Select(x => x.CaloriesBurned).Sum();
-                return sum;
-            }
-        }
 
         [Display(Name = "Completed Workouts")]
         public virtual ICollection<Workout> ListOfCompletedWorkouts { get; set; }
         public UserTracker()
         {
             ListOfCompletedWorkouts = new List<Workout>();
+            ListOfMealsEaten = new List<Recipe>();
         }
 
-        //[Display(Name = "Meals Eaten")]
-        //public virtual ICollection<Recipe> ListOfMealsEaten { get; set; }
+        [Display(Name = "Meals Eaten")]
+        public virtual ICollection<Recipe> ListOfMealsEaten { get; set; }
+        
         //public UserTracker()
         //{
-        //    ListOfMealsEaten = new List<Recipes>();
+        //    ListOfMealsEaten = new List<Recipe>();
         //}
 
         //^^relationship will need to be added to Recipe data and tracker models as well^^
