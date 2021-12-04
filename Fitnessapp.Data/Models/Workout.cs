@@ -29,6 +29,5 @@ namespace Fitnessapp.Data.Models
         {
             ListOfTrackers = new List<UserTracker>();
         }
-
     }
 }
