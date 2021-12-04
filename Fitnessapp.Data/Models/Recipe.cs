@@ -21,5 +21,11 @@ namespace Fitnessapp.Data.Models
         public double MealType { get; set; }
         [Required]
         public int Calories { get; set; }
+
+        public virtual ICollection<UserTracker> ListOfTrackers { get; set; }
+        public Recipe()
+        {
+            ListOfTrackers = new List<UserTracker>();
+        }
     }
 }

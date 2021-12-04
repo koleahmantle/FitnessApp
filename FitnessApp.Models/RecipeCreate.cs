@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fitnessapp.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -18,5 +19,11 @@ namespace FitnessApp.Models
         public double MealType { get; set; }
         [Required]
         public int Calories { get; set; }
+
+        public virtual ICollection<UserTracker> ListOfTrackers { get; set; }
+        public RecipeCreate()
+        {
+            ListOfTrackers = new List<UserTracker>();
+        }
     }
 }
