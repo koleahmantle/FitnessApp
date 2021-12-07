@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(FitnessApp.WebAPI.Startup))]
+
 
 namespace FitnessApp.WebAPI
 {
