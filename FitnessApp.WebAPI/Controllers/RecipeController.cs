@@ -1,11 +1,9 @@
-﻿using FitnessApp.Models;
+﻿
+using FitnessApp.Models;
 using FitnessApp.Services;
 using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+
 using System.Web.Http;
 
 namespace FitnessApp.WebAPI.Controllers

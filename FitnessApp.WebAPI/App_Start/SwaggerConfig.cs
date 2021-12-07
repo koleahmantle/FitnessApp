@@ -1,4 +1,4 @@
-using System.Web.Http;
+
 using WebActivatorEx;
 using Swashbuckle.Application;
 using System.Linq;
@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Web.Http.Description;
 using System.Web.Http.Filters;
 using FitnessApp.WebAPI;
+using System.Web.Http;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
