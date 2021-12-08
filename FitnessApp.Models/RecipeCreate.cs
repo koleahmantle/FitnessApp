@@ -20,10 +20,10 @@ namespace FitnessApp.Models
         [Required]
         public int Calories { get; set; }
 
-        public virtual ICollection<Fitnessapp.Data.Models.UserTracker> ListOfTrackers { get; set; }
+        public virtual ICollection<UserTracker> ListOfTrackers { get; set; }
         public RecipeCreate()
         {
-            ListOfTrackers = new List<Fitnessapp.Data.Models.UserTracker>();
+            ListOfTrackers = new List<UserTracker>();
         }
     }
 }
