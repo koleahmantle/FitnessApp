@@ -20,6 +20,8 @@ namespace FitnessApp.WebAPI.Controllers
             return Ok(workouts);
         }
 
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("api/Workout/{id}")]
         public IHttpActionResult Get(int id)
         {
             WorkoutService workoutService = CreateWorkoutService();
@@ -29,7 +31,7 @@ namespace FitnessApp.WebAPI.Controllers
 
         //Get workouts by UserTrackerId 
         [System.Web.Http.HttpGet]
-        [System.Web.Http.Route("api/Workout/{trackerId}")]
+        [System.Web.Http.Route("api/Workout/ByTrackerId{trackerId}")]
         public IHttpActionResult GetWOsByTId(int trackerId)
         {
             WorkoutService workoutService = CreateWorkoutService();

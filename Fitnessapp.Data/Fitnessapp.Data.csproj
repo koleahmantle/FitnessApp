@@ -168,6 +168,10 @@
     <Compile Include="Migrations\202111271949176_GetCaloriesBurnedByTrackerId.Designer.cs">
       <DependentUpon>202111271949176_GetCaloriesBurnedByTrackerId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112081535228_merge.cs" />
+    <Compile Include="Migrations\202112081535228_merge.designer.cs">
+      <DependentUpon>202112081535228_merge.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -196,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111271949176_GetCaloriesBurnedByTrackerId.resx">
       <DependentUpon>202111271949176_GetCaloriesBurnedByTrackerId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112081535228_merge.resx">
+      <DependentUpon>202112081535228_merge.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
