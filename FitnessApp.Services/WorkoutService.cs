@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace FitnessApp.Services
 {
-    public class WorkoutService
     {
         private readonly Guid _userId;
 
-        public WorkoutService(Guid userId)
+        public Workou
+    public class WorkoutServicetService(Guid userId)
         {
             _userId = userId;
         }

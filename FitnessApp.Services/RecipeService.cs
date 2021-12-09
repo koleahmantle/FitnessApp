@@ -60,6 +60,56 @@ namespace FitnessApp.Services
             }
         }
 
+        public RecipeDetail GetRecipeById (int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Recipes
+                        .Single(e => e.RecipeId == id && e.OwnerId == _userId);
+                return new RecipeDetail
+                {
+                    RecipeId = entity.RecipeId,
+                    RecipeName = entity.RecipeName,
+                    Diet = entity.Diet,
+                    MealType = entity.MealType,
+                    Calories = entity.Calories,
+                };
+            }
+        }
 
+        public bool UpdateRecipe(RecipeEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Recipes
+                        .Single(e => e.RecipeId == model.RecipeId && e.OwnerId == _userId);
+
+                entity.RecipeId = model.RecipeId;
+                entity.RecipeName = model.RecipeName;
+                entity.Diet = model.Diet;
+                entity.MealType = model.MealType;
+                entity.Calories = model.Calories;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteRecipe(int recipeId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Recipes
+                        .Single(e => e.RecipeId == recipeId && e.OwnerId == _userId);
+                ctx.Recipes.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
