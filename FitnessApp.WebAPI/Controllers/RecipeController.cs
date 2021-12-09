@@ -36,6 +36,12 @@ namespace FitnessApp.WebAPI.Controllers
             var recipeService = new RecipeService(userId);
             return recipeService;
         }
+        public IHttpActionResult Get (int id)
+        {
+            RecipeService noteService = CreateRecipeService();
+            var recipe = noteService.GetRecipeById(id);
+            return Ok(recipe);
+        }
     }
 
 }
