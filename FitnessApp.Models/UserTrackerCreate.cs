@@ -14,6 +14,7 @@ namespace FitnessApp.Models
         public string TagLine { get; set; }
 
         public virtual ICollection<Workout> ListOfCompletedWorkouts { get; set; }
+
         public UserTrackerCreate()
         {
             ListOfCompletedWorkouts = new List<Workout>();
