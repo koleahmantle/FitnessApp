@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace FitnessApp.Services
 {
-    public class WorkoutService
     {
         private readonly Guid _userId;
 
-        public WorkoutService(Guid userId)
+        public Workou
+    public class WorkoutServicetService(Guid userId)
         {
             _userId = userId;
         }
@@ -66,14 +66,14 @@ namespace FitnessApp.Services
             {
                 var entity = ctx
                     .Workouts
-                    .Single(e => e.WorkoutId == id && e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.WorkoutId == id && e.OwnerId == _userId);
                 return new WorkoutDetail
                 {
                     WorkoutId = entity.WorkoutId,
                     Name = entity.Name,
                     Category = entity.Category,
                     Duration = entity.Duration,
-                    Intensity = entity.Intensity,
+                    Intensity = entity.Intensity, 
                     CaloriesBurned = entity.CaloriesBurned
                 };
             }
@@ -89,6 +89,10 @@ namespace FitnessApp.Services
                     {
                         WorkoutId = e.WorkoutId,
                         Name = e.Name,
+                        Category = e.Category,
+                        Duration = e.Duration,
+                        Intensity = e.Intensity,
+                        CaloriesBurned = e.CaloriesBurned
                     });
                 return foundWorkouts.ToArray();
             }

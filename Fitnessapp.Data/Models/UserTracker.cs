@@ -15,9 +15,9 @@ namespace Fitnessapp.Data.Models
         public int UserTrackerId { get; set; }
         [Required]
         public Guid UserId { get; set; }
-        [Required]
+        
         public string UserName { get; set; }
-        [Required]
+        
         public string TagLine { get; set; }
 
         [Display(Name = "Completed Workouts")]
@@ -25,7 +25,7 @@ namespace Fitnessapp.Data.Models
         public UserTracker()
         {
             ListOfCompletedWorkouts = new List<Workout>();
-            ListOfMealsEaten = new List<Recipe>();
+            //ListOfMealsEaten = new List<Recipe>();
         }
 
         [Display(Name = "Meals Eaten")]

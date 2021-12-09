@@ -1,11 +1,9 @@
-﻿using FitnessApp.Models;
+﻿
+using FitnessApp.Models;
 using FitnessApp.Services;
 using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+
 using System.Web.Http;
 
 namespace FitnessApp.WebAPI.Controllers
@@ -37,6 +35,12 @@ namespace FitnessApp.WebAPI.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var recipeService = new RecipeService(userId);
             return recipeService;
+        }
+        public IHttpActionResult Get (int id)
+        {
+            RecipeService noteService = CreateRecipeService();
+            var recipe = noteService.GetRecipeById(id);
+            return Ok(recipe);
         }
     }
 
