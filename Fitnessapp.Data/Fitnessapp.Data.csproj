@@ -147,6 +147,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <Compile Include="Migrations\202111221537522_UserTracker.cs" />
     <Compile Include="Migrations\202111221537522_UserTracker.Designer.cs">
       <DependentUpon>202111221537522_UserTracker.cs</DependentUpon>
@@ -166,6 +167,11 @@
     <Compile Include="Migrations\202111271949176_GetCaloriesBurnedByTrackerId.cs" />
     <Compile Include="Migrations\202111271949176_GetCaloriesBurnedByTrackerId.Designer.cs">
       <DependentUpon>202111271949176_GetCaloriesBurnedByTrackerId.cs</DependentUpon>
+=======
+    <Compile Include="Migrations\202112092324040_Intital.cs" />
+    <Compile Include="Migrations\202112092324040_Intital.designer.cs">
+      <DependentUpon>202112092324040_Intital.cs</DependentUpon>
+>>>>>>> Stashed changes
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -181,11 +187,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     <ProjectReference Include="..\FitnessApp.Models\FitnessApp.Models.csproj">
       <Project>{c2c28ff6-c584-457c-baba-c6c8fc95e7b0}</Project>
       <Name>FitnessApp.Models</Name>
     </ProjectReference>
+<<<<<<< Updated upstream
     <EmbeddedResource Include="Migrations\202111221537522_UserTracker.resx">
       <DependentUpon>202111221537522_UserTracker.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +210,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111271949176_GetCaloriesBurnedByTrackerId.resx">
       <DependentUpon>202111271949176_GetCaloriesBurnedByTrackerId.cs</DependentUpon>
+=======
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202112092324040_Intital.resx">
+      <DependentUpon>202112092324040_Intital.cs</DependentUpon>
+>>>>>>> Stashed changes
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
