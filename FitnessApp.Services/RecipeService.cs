@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace FitnessApp.Services
 {
-   public  class RecipeService
+   public class RecipeService
     {
         private readonly Guid _userId;
 

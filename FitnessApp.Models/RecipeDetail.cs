@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace FitnessApp.Models
 {
-    class RecipeDetail
+    public class RecipeDetail
     {
+        public int RecipeId { get; set; }
+        public string RecipeName { get; set; }
+        public string Diet { get; set; }
+        public double MealType { get; set; }
+        public int Calories { get; set; }
+
     }
 }

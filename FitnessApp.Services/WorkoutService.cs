@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace FitnessApp.Services
 {
+    public class WorkoutService
     {
         private readonly Guid _userId;
 
-        public Workou
-    public class WorkoutServicetService(Guid userId)
+        public WorkoutService(Guid userId)
         {
             _userId = userId;
         }
@@ -73,7 +73,7 @@ namespace FitnessApp.Services
                     Name = entity.Name,
                     Category = entity.Category,
                     Duration = entity.Duration,
-                    Intensity = entity.Intensity, 
+                    Intensity = entity.Intensity,
                     CaloriesBurned = entity.CaloriesBurned
                 };
             }
