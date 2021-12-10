@@ -42,6 +42,26 @@ namespace FitnessApp.WebAPI.Controllers
             var recipe = noteService.GetRecipeById(id);
             return Ok(recipe);
         }
+        public IHttpActionResult Put(RecipeEdit workout)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateRecipeService();
+
+            if (!service.UpdateRecipe(workout))
+                return InternalServerError();
+
+            return Ok();
+        }
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateRecipeService();
+            if (!service.DeleteRecipe(id))
+                return InternalServerError();
+
+            return Ok();
+        }
     }
 
 }

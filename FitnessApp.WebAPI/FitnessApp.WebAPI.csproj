@@ -390,20 +390,6 @@
     <Folder Include="Views\Workout\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Fitnessapp.Data\Fitnessapp.Data.csproj">
-      <Project>{CBF9987A-7119-4137-A863-2DF332C419A8}</Project>
-      <Name>Fitnessapp.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FitnessApp.Models\FitnessApp.Models.csproj">
-      <Project>{C2C28FF6-C584-457C-BABA-C6C8FC95E7B0}</Project>
-      <Name>FitnessApp.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FitnessApp.Services\FitnessApp.Services.csproj">
-      <Project>{B768D18E-D6FF-487A-B9A6-6C3FF0BEE613}</Project>
-      <Name>FitnessApp.Services</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
@@ -416,6 +402,20 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fitnessapp.Data\Fitnessapp.Data.csproj">
+      <Project>{CBF9987A-7119-4137-A863-2DF332C419A8}</Project>
+      <Name>Fitnessapp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FitnessApp.Models\FitnessApp.Models.csproj">
+      <Project>{C2C28FF6-C584-457C-BABA-C6C8FC95E7B0}</Project>
+      <Name>FitnessApp.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FitnessApp.Services\FitnessApp.Services.csproj">
+      <Project>{B768D18E-D6FF-487A-B9A6-6C3FF0BEE613}</Project>
+      <Name>FitnessApp.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
