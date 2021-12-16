@@ -1,9 +1,14 @@
-# FitnessApp - Blue Badge Agile Project - EFA
+# FitnessApp - EFA - Blue Badge Group API Project
 ###### By Koleah Mantle, William Wentworth and Maggie Snader
 #### Overview
-###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For our Agile Project we decided to work on a Fitness App. The plan for the app is to allow members to find exercise routines that fit their lifestyle. Looking to expand into recipies and user workout and fitness information tracker.
+###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For our Agile Project we decided to work on a Fitness App. We designed an application that helps user maintain or begin a healthy lifestyle by allowing users to create and search for various exercises and recipes in the app. The user will also be able to track their completed exercises with metrics, as well as track meals and recipes.
 #### Resources
 ###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Below are links to the planning documents we created. We drew up a few user profiles, and created user stories. We used the user stories to assist in making a basic wireframe to show a rough picture of how we will build the app. We used the project manager on Git Hub to create our task list for the project.
 ###### [User Stories](https://docs.google.com/document/d/1FjGca_K4fwRP-BeF_VMSdW9wT_KUqedD1W1zQGb3vAc/edit?usp=sharing)
-###### [Wireframe](https://docs.google.com/drawings/d/14k79ETYCYcKEEntjIjoacnj1b7qgVifc9f5hM8tBZV4/edit?usp=sharing)
+###### [Wireframe](https://lucid.app/lucidchart/e9be28b8-e3b6-4ada-9b9d-25c35204579b/edit?invitationId=inv_90dc62d7-fb41-4646-ad1f-9cc30b8ee13a&page=0_0#)
 ###### [Pointed Task List](https://github.com/koleahmantle/FitnessApp/projects/1)
+###### [Presentation Slides](https://docs.google.com/presentation/d/1l8RG_U2qze70lOtjQB8_vjczlLpOgGYmH23rat8T80Y/edit#slide=id.p)
+###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Workout Database allows the user to create, delete, update, and display all or specific Workouts.  The following are possible endpoints; create a Workout in the database, remove a Workout from the database, update a Workout in the database, display all the Workouts in the database, display a specific Workout using the ID of the Workout.  All Workouts in the database have a owner, id, name, category, duration, intensity, and the calories burned. 
+###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Recipe Database allows the user to create, delete, update, and display all or specific Recipes.  The following are possible endpoints; create a new recipe in the database, view the list of all recipes in the database, search for a specific recipe by ID in the database, delete a recipe from the database.  All the recipes will be required to have a recipe name, diet type, meal type, and calorie count.  
+###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The UserTracker Database allows the user to create, delete, update, and display all or specific UserTrackers. The following are possible endpoints; create a UserTracker in the database, remove a UserTracker from the database, update a UserTracker in the database, display all UserTrackers in the database, and display a specific UserTracker using the Id of the UserTracker.  All UserTrackers in the database have a UserId, a UserTrackerId, a UserName, and a TagLine.
+###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We also built in the functionality to be able to link a Workout to a UserTracker so that the user can track how many Workouts they have completed and see how many Calories they might have burned in the process.
